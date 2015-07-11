@@ -1,0 +1,28 @@
+
+public class PRNG {
+// Psuedo-Random Number Generator
+
+	public static void main(String[] args) {
+		// TODO - PRNG Seed calculation
+		long InitSeed;
+		long tempSeed;
+		long Seed;
+		long SeedStep1;
+		long SeedStep2;
+		InitSeed = System.currentTimeMillis();
+			// Call System Time
+		tempSeed = Math.abs(InitSeed % 0xFFFF);
+			// Conver System Time to positive four byte long
+		SeedStep1 = tempSeed * 0x41C64E6D;
+			// Multiply 4 byte long by 1103515245
+		SeedStep2 = SeedStep1 + 0x6073;
+			// Adding 24691 to long
+		Seed = SeedStep2 % 0xFFFF;
+			// Result converted to 4 byte long
+		System.out.println("Step 0: " + tempSeed);
+		System.out.println("Step 1: " + SeedStep1);
+		System.out.println("Step 2: " + SeedStep2);
+		System.out.println("Step 3: " + Seed);
+	}
+
+}

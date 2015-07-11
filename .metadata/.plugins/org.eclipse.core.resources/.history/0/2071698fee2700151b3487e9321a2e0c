@@ -1,0 +1,17 @@
+
+public class PRNG {
+// Psuedo-Random Number Generator
+
+	public long IntSeed;
+	public long Seed;
+
+	public static void main(String[] args) {
+		// TODO - PRNG Seed calculation
+		InitSeed = System.currentTimeMillis();
+			// Call System Time
+		Seed = ((InitSeed * 0x41C64E6D) + 0x6073) % 0xFFFF;
+			// Calculate Seed
+		System.out.println(Seed);
+	}
+
+}
