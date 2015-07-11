@@ -1,0 +1,28 @@
+
+
+public class PRNGtest {
+// Psuedo-Random Number Generator
+
+	public static void main(String[] args) {
+		// TODO - Test & Cleanup
+		long tempSeed;
+		long Seed;
+		long SeedStep1;
+		long SeedStep2;
+		long InitSeed = System.nanoTime();
+			// Call System Time
+		tempSeed = Math.abs(InitSeed);
+			// Convert System Time to positive 2 byte long
+		SeedStep1 = tempSeed * 1103515245;
+			// Multiply 4 byte long by 1103515245
+		SeedStep2 = SeedStep1 + 24691;
+			// Adding 24691 to long
+		Seed = SeedStep2 % 65535;
+			// Result converted to 2 byte long
+		System.out.println("Step 1: " + Long.toHexString(tempSeed));
+		System.out.println("Step 2: ???"); // South Park joke
+		System.out.println("Step 3: " + Long.toHexString(Seed));
+		System.out.println("Roll 1d20: " + ((Seed % 20) + 1));
+	}
+
+}

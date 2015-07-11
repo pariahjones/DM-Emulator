@@ -1,0 +1,10 @@
+import java.Utils;
+public class dTwenty {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Random dTwen = new Random(int);
+		System.out.println("Roll 1d20: " + (dTwen(20) +1));
+	}
+
+}
